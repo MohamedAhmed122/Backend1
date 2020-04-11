@@ -1,0 +1,26 @@
+﻿@inject IRanomNumbers  Random
+@inject ICalculation Calc
+
+
+@{
+    ViewBag.Title = "Pass using Model";
+    var number1 = Random.GetNumber(100);
+    var number2 = Random.GetNumber(100);
+
+    var Addition =number1 + "+" + number2 + "=" +
+        Calc.Sum(number1, number2);
+    var Substraction = number1 + "-" + number2 + "=" +
+                Calc.Substraction(number1, number2);
+    var Division = number1 + "/" + number2 + "=" +
+                Calc.Division(number1, number2);
+    var Multiplication = number1 + "*" + number2 + "=" +
+                Calc.Multiply(number1, number2);
+
+}
+<h2>Pass Using view inject directly</h2>
+<dl class="dl-horizontal">
+    <dd>@Addition</dd>
+    <dd>@Substraction</dd>
+    <dd>@Multiplication </dd>
+    <dd>@Division</dd>
+</dl>
